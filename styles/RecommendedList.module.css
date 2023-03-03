@@ -1,0 +1,33 @@
+.recommendedListWrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+}
+.product {
+    margin: var(--base-size);
+   width: calc( 50% - var(--base-size ) * 2);
+    background-color: #fff;
+    display: inline-block;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid gray;
+
+}
+.productThumbnailContainer{
+    width: 100%;
+    aspect-ratio: 1 / 0.53;
+    overflow: hidden;
+}
+
+.productThumbnail {
+    /* width: 150px;
+    height:150px; */
+    width: 100%;
+    
+
+}
+.productTitle {
+    margin :calc( var(--base-size)* 2)  var(--base-size) var(--base-size) var(--base-size) 
+}
+

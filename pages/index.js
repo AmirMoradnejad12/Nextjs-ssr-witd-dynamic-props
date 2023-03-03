@@ -1,20 +1,17 @@
 import Link from "next/link";
-import useSWR from 'swr';
-import  styles from '../styles/Home.module.css'
-
-
+import  styles from '../styles/Home.module.css';
+import RecommendedList from "components/recommendedList";
 
 
 function HomePage({productCategories}){
 
     return(
-        <main className={styles.main}>
-          <div className={styles.titleOne}> Welcome to my SSR Rendering with daynamic paramiter examole </div>
+      <div className="container">
+        <main className="main">
+          <div className="titleOne"> Welcome to my SSR Rendering with daynamic paramiter examole </div>
           <section className={styles.ssrSectionWrraper}>
-          <span className={styles.sectionDescription}>This section is Server Side renderin and it will index! </span>
-
-          
-            <h1 className={styles.titleOne}> List Of categories</h1>
+          <span className="extra-Info__Message">This section is Server Side renderin and it will index! </span>
+            <h1 className="titleOne"> List Of categories</h1>
 
             <div className={styles.catrgoriesWrapper}>
               {
@@ -30,51 +27,19 @@ function HomePage({productCategories}){
               }
             </div>
           </section>
-          <section>|
-            <p>this section is client side rendering !</p>
-            <h2>recomended product only for you </h2>
+          <section className={styles.ssrSectionWrraper}>
+            <span className="extra-Info__Message">This section is client side rendering and used "useSWR" !</span>
+            <h2 className="titleOne">recomended product only for you </h2>
             <RecommendedList/>
           </section>
 
-      </main>
+        </main>
+      </div>
+
     )
 }
 export default HomePage;
 
-
-function RecommendedList() {
-
-  const fetcher = async()=>{
-    const response = await fetch("http://localhost:4000/products");
-  
-    const data = await response.json();
-    return data;
-  }
-  
-  let {data , error , isLoading } =  useSWR('index3' , fetcher)
-  if(error) return "An error accour"; 
-  console.log("data" , data)
-
-  if(isLoading) return "Loading";
-  if(!data) return "List is not valid";
-
-  let recommendedProduct=data.slice(0, 8)
-
-  return(
-      <>
-        {
-          recommendedProduct.map( item => {
-            return(
-              <div key={item.id }>
-                <p>{item.title}</p>
-              </div>
-            )
-          })
-        }
-      </>
-  )
-    
-}
 
 
 export async function getServerSideProps(){
