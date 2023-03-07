@@ -33,14 +33,16 @@
 }
 .extra-Info__Message {
   border: 1px solid #f8f8f8;
-  margin-bottom: var(--base-size);
+  margin: calc( var(--base-size) * 2 ) auto;
   box-shadow: 0 3px 3px rgb(0 0 0 / 16%);
   padding: calc( var(--base-size) * 2 );
   border-radius: 5px;
   font-size: calc( var(--base-font-size) + 8px);
   background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-  display: inline-block
+  display: block;
+  max-width: 650px;
+  text-align: center;
 }
 @media (prefers-color-scheme: dark) {
   :root {

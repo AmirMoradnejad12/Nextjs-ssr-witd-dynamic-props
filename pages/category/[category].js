@@ -3,7 +3,11 @@ import  styles from '../../styles/Category.module.css';
 function CategoryList({categoryItems ,category}){
     return(
         <div className="main">
+             <span className="extra-Info__Message">
+                 This is an example of SSR with dynamic paramiters
+            </span>
             <h1 className="titleOne">{category} categories</h1>
+
             <div className={styles.itemsWrapper}>
                 {categoryItems.map( item=>{
                     return(
