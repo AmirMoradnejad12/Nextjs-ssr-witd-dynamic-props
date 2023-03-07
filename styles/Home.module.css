@@ -7,9 +7,6 @@
   margin-bottom: calc( var(--base-font-size) * 5);
 
 }
-
-
-
 .catrgoriesWrapper {
   display: flex;
   flex-direction: row;
@@ -18,9 +15,6 @@
   justify-content: center;
 
 }
-/* .catrgoriesWrapper >* {
-  flex: 0 0 30%;
-} */
 .category {
   text-align: center;
   border: 1px solid gray;
@@ -33,15 +27,12 @@
   transition: all .1s ease-in-out;
   width: 100%;
 
-
 }
 .category:hover {
   border: 1px solid rgb(46, 12, 103);
   box-shadow: 0 3px 3px rgb(0 0 0 / 16%);
   transform: scale(1.01);
   transition: all .3s ease-in-out;
-
-
 }
 .categoryLink {
   height: 150px;
@@ -62,29 +53,4 @@
     
   }
 }
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-  .grid {
-    grid-template-columns: repeat(2, 50%);
-  }
-}
 
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo,
-  .thirteen img {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
-}
-
-@keyframes rotate {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}

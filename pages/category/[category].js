@@ -20,11 +20,9 @@ function CategoryList({categoryItems ,category}){
                         </div>
                     )
                 })}
-            </div>
-           
+            </div>       
         </div>
     )
-    
 }
 
 export default CategoryList;
