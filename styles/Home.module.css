@@ -1,7 +1,7 @@
 
 .ssrSectionWrraper{
   background-color: #FBFBFBFB;
-  border-radius: 4%;
+  border-radius: 8px;
   padding:calc(  var(--base-font-size));
   text-align: center;
   margin-bottom: calc( var(--base-font-size) * 5);
