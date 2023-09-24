@@ -3,7 +3,9 @@ import styles from "../styles/RecommendedList.module.css";
 
 export default function RecommendedList() {
   const fetcher = async () => {
-    const response = await fetch("http://localhost:4000/products");
+    const BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+
+    const response = await fetch(`${BASE_URL}/products`);
     const data = await response.json();
     return data;
   };
@@ -18,6 +20,7 @@ export default function RecommendedList() {
 
   return (
     <div className={styles.recommendedListWrapper}>
+      <h2 className="titleOne">Recomended Product Only For You </h2>
       {recommendedProduct.map((item) => {
         return (
           <div className={styles.product} key={item.id}>
